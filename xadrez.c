@@ -1,48 +1,63 @@
 #include <stdio.h>
 
+// Função recursiva para o movimento da Torre
+void movimentacaoTorre(int casas) {
+    if (casas == 0) return;
+    printf("Direita\n");
+    movimentacaoTorre(casas - 1);
+}
+
+// Função recursiva para o movimento da Rainha
+void movimentacaoRainha(int casas) {
+    if (casas == 0) return;
+    printf("Esquerda\n");
+    movimentacaoRainha(casas - 1);
+}
+
+// Função recursiva para o movimento do Bispo (com loop aninhado)
+void movimentacaoBispo(int vertical, int horizontal) {
+    if (vertical == 0) return; // parada
+
+    for (int i = 0; i < horizontal; i++) {
+        printf("Cima Direita\n");
+    }
+
+    movimentacaoBispo(vertical - 1, horizontal + 1);
+}
+
+// Função para movimentar o Cavalo (duas casas para cima e uma para a direita)
+void movimentacaoCavalo() {
+    printf("Movimento da peça Cavalo: \n");
+
+    for (int i = 0; i < 2; i++) {   // Movendo duas casas para cima
+        printf("Cima\n");
+
+        }
+    for (int j = 0; j < 1; j++)
+    {
+        printf("Direita \n");
+    }
+    printf("\n");
+}
+
 int main() {
-    // Declarando movimentação da peça Torre.
-    int Torre = 5;
-    printf("Movimento da Torre.\n");
-    for (int i = 0; i < Torre; i++) {
-        printf("Movimento à direita\n");
-    }
+    // Movimento da Torre
+    printf("Movimento da Torre:\n");
+    movimentacaoTorre(5);
     printf("\n");
 
-    // Declarando movimentação da peça Bispo.
-    int Bispo = 5;
-    int j = 0;
-    printf("Movimento do Bispo.\n");
-    while (j < Bispo) {  
-        printf("Cima Direita.\n");
-        j++; 
-    }
-    printf("\n");
-    
-    // Declarando movimento da peça Rainha.
-    int Rainha = 8;
-    int k = 0;
-    printf("Movimento da Rainha.\n");
-    do {
-        printf("Movimento à esquerda.\n");
-        k++;  
-    } while (k < Rainha);
-
+    // Movimento do Bispo
+    printf("Movimento do Bispo:\n");
+    movimentacaoBispo(5, 1);            // Vertical = 5, Horizontal = 1
     printf("\n");
 
-    // Declarando movemento da peça Cavalo.
-    printf("Movimento da peça Cavalo \n");
+    // Movimento da Rainha
+    printf("Movimento da Rainha:\n");
+    movimentacaoRainha(8);
+    printf("\n");
 
-    for (int l = 0; l < 2; l++) {   //Loop para mover duas casas para baixo 
-        printf("Baixo\n");
-    }
-
-    int m = 0;                     // Usando um loop while para mover uma casa para a esquerda
-    while (m < 1) {
-        printf("Esquerda\n");
-        m++;
-    }
+    // Movimento do Cavalo
+    movimentacaoCavalo();
 
     return 0;
 }
-
