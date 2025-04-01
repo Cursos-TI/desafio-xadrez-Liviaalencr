@@ -11,22 +11,37 @@ int main() {
 
     // Declarando movimentação da peça Bispo.
     int Bispo = 5;
-    int b = 0;
+    int j = 0;
     printf("Movimento do Bispo.\n");
-    while (b < Bispo) {  
+    while (j < Bispo) {  
         printf("Cima Direita.\n");
-        b++; 
+        j++; 
     }
     printf("\n");
     
     // Declarando movimento da peça Rainha.
     int Rainha = 8;
-    int R = 0;
+    int k = 0;
     printf("Movimento da Rainha.\n");
     do {
         printf("Movimento à esquerda.\n");
-        R++;  
-    } while (R < Rainha);
+        k++;  
+    } while (k < Rainha);
+
+    printf("\n");
+
+    // Declarando movemento da peça Cavalo.
+    printf("Movimento da peça Cavalo \n");
+
+    for (int l = 0; l < 2; l++) {   //Loop para mover duas casas para baixo 
+        printf("Baixo\n");
+    }
+
+    int m = 0;                     // Usando um loop while para mover uma casa para a esquerda
+    while (m < 1) {
+        printf("Esquerda\n");
+        m++;
+    }
 
     return 0;
 }
